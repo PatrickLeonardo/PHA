@@ -1,1 +1,1 @@
-# PHA-256-Procedural-Hash-Algorithm-
+# PHA-256-Procedural-Hash-Algorithm
