@@ -8,5 +8,16 @@ public class KeyPairs {
         
     }
 
+    public static void defineKeySpec(){
+
+
+
+    }
+
+    protected static void charsetUTF(){
+
+
+        
+    }
 
 }
