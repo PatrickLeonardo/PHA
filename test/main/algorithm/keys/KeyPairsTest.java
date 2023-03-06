@@ -1,23 +1,13 @@
 package test.main.algorithm.keys;
 
+import org.junit.Test;
+
 public class KeyPairsTest {
     
-    public static void createPHAKey(){
+    @Test
+    public static void createPHAKeyTest(){ }
 
-        
-        
-    }
-
-    public static void defineKeySpec(){
-
-
-
-    }
-
-    protected static void charsetUTF(){
-
-
-        
-    }
+    @Test
+    public static void defineKeySpecTest(){ }
 
 }
