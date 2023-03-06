@@ -7,9 +7,9 @@ public class HashEqualityProbability {
         HashEqualityProbability hashEqualityProbability = new HashEqualityProbability();        
         
         int numberOfProbability = 10;
-        for (int i = 8; i > 0; i--){ numberOfProbability *= 10; }
+        for (int i = 8; i > 0; i--) numberOfProbability *= 10;
         int prefix = 2;
-        for (double i = 10; i > 0; i--){ prefix *= 2; }
+        for (double i = 10; i > 0; i--) prefix *= 2;
         
         numberOfProbability += prefix;
         double probability = hashEqualityProbability.getProbability(numberOfProbability);
@@ -21,7 +21,7 @@ public class HashEqualityProbability {
         
         System.out.println("\n" + (1.0/365));
         double p = Math.pow((1.0/365), number);
-        for(int i = (366 - number); i < 366; i++){ p *= i; }
+        for(int i = (366 - number); i < 366; i++) p *= i;
         return 1 - p;
 
     }
