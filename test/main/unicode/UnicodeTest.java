@@ -11,14 +11,6 @@ public class UnicodeTest {
     public static final Charset ISO_8859_1 = Charset.forName("ISO-8859-1");
     public static final Charset UTF_8 = Charset.forName("UTF-8");
 
-    public static void main(String[] args) {
-
-        CharacteresUnicodeTest();
-        CharsetTest();
-
-    }
-
-    @Test
     public static char[] CharacteresUnicodeTest(){
 
         final char[] CHARACTERS = {
@@ -35,20 +27,20 @@ public class UnicodeTest {
 
         };
 
-        assertEquals('a', CHARACTERS[0]);
         return CHARACTERS;
 
     }
 
     @Test
-    public static String CharsetTest(){
+    public void CharsetTest(){
 
         String myString = new String("ã, á, â");
         byte[] myByte = myString.getBytes(UTF_8);
         String UTF_8_String = new String(myByte);
+        char[] characters = CharacteresUnicodeTest();
 
+        assertEquals('a', characters[0]);
         assertEquals("ã, á, â", UTF_8_String);
-        return UTF_8_String;
         
     }
 
