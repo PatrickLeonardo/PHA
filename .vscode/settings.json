@@ -1,6 +1,7 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "target/junit-4.13.2.jar"
+        "target/junit-4.13.2.jar",
+        "target/hamcrest-2.2.jar"
     ]
 }
