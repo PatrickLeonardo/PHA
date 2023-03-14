@@ -5,9 +5,9 @@ import org.junit.Test;
 public class KeyPairsTest {
     
     @Test
-    public static void createPHAKeyTest(){ }
+    public void createPHAKeyTest(){ }
 
     @Test
-    public static void defineKeySpecTest(){ }
+    public void defineKeySpecTest(){ }
 
 }
