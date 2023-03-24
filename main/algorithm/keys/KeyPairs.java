@@ -4,6 +4,8 @@ import main.hash.HashEqualityProbability;
 
 public class KeyPairs {
 
+    protected static String PHAKey;
+
     public static void createPHAKey(final Integer prefix){
 
         try {
@@ -30,9 +32,19 @@ public class KeyPairs {
                 if (Double.isNaN(matrix[line][column][0]) || Double.isInfinite(matrix[line][column][0])){
                     throw new java.lang.ArithmeticException();
                 }
-                System.out.println("| " + matrix[line][column][0] + " |");
+                if (String.valueOf(matrix[line][column][0]) != "null"){
+                    PHAKey += String.valueOf((matrix[line][column][0]) + " ");
+                }
             }
         }
+        PHAKey = PHAKey.replaceAll("null", "");
+        // PHAKey = PHAKey.replaceAll("\\.", "");
+
+        String[] copyOfPHAKey = PHAKey.split(" ");
+        for (int index = 0; index < copyOfPHAKey.length; index++){
+            System.out.println(copyOfPHAKey[index]);
+        }
+        //System.out.println("\n" + PHAKey + "\n");
 
     }
 
