@@ -3,8 +3,8 @@
 
 <hr>
 
-- Hamcrest v2.2    <br>
-- Junit    v4.13.2 <br>
-- JDK      v19.0.2 <br>
+- Hamcrest   v.2.2    <br>
+- Junit      v.4.13.2 <br>
+- JDK v.20 2023-03-21 <br>
 
 <hr>
