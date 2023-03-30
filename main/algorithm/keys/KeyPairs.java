@@ -41,11 +41,8 @@ public class KeyPairs {
         // PHAKey = PHAKey.replaceAll("\\.", "");
 
         String[] copyOfPHAKey = PHAKey.split(" ");
-        for (int index = 0; index < copyOfPHAKey.length; index++){
-            System.out.println(copyOfPHAKey[index]);
-        }
-        //System.out.println("\n" + PHAKey + "\n");
-
+        if(copyOfPHAKey.length == 16);
+        
     }
 
     public static void defineKeySpec(){ }
