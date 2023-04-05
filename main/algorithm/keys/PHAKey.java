@@ -3,7 +3,7 @@ package main.algorithm.keys;
 import main.algorithm.utilities.bitManager;
 import main.hash.HashEqualityProbability;
 
-public class KeyPairs {
+public class PHAKey {
 
     protected static String PHAKey;
     private final static Integer POW_PREFIX = 1024;
