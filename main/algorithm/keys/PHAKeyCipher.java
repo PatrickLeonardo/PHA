@@ -31,7 +31,7 @@ public class PHAKeyCipher {
         for(int line = 0; line < 4; line++){
             for(int column = 0; column < 4; column++){
                 
-                matrix[line][column][0] = (byte)Math.log(Math.pow((POW_PREFIX * line + prefix), prefix));
+                matrix[line][column][0] = (byte)Math.log(Math.pow((POW_PREFIX * (line + column) + prefix), prefix));
                 if (Double.isNaN(matrix[line][column][0]) || Double.isInfinite(matrix[line][column][0])){
                     throw new java.lang.ArithmeticException();
                 }
@@ -44,6 +44,9 @@ public class PHAKeyCipher {
 
         PHAKey = PHAKey.replaceAll("null", "");
         //PHAKey = PHAKey.replaceAll("\\.", "");
+    
+        SubBytes subBytes = new SubBytes(PHAKey);
+        subBytes.generateRoundKey();
 
         return PHAKey;
     }
