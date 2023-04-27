@@ -2,6 +2,9 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "target/junit-4.13.2.jar",
-        "target/hamcrest-2.2.jar"
+        "test/target/hamcrest-2.2.jar"
+    ],
+    "java.project.sourcePaths": [
+        ""
     ]
 }
