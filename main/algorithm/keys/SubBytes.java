@@ -15,7 +15,11 @@ public class SubBytes {
         int[] integerMatrix = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
         for(int index = 0; index < stringMatrix.length; index++){
-            integerMatrix[index] = Byte.parseByte(stringMatrix[index], 2);
+            try {
+                integerMatrix[index] = Byte.parseByte(stringMatrix[index], 2);
+            } catch (NumberFormatException e) {
+                integerMatrix[index] ++;
+            }
         }
 
         return integerMatrix;
