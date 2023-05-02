@@ -1,6 +1,6 @@
 package main;
 
-import main.algorithm.keys.PHAKeyCipher;
+import main.algorithm.key.PHAKeyCipher;
 import main.algorithm.utilities.bitManager;
 
 public class MainExecution {
