@@ -1,4 +1,4 @@
-package main.algorithm.keys;
+package main.algorithm.key;
 
 import main.algorithm.utilities.bitManager;
 import main.hash.HashEqualityProbability;

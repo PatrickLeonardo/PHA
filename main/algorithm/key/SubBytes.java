@@ -1,4 +1,4 @@
-package main.algorithm.keys;
+package main.algorithm.key;
 
 public class SubBytes {
     
@@ -26,11 +26,18 @@ public class SubBytes {
 
     }
 
-    public void generateRoundKey() {
+    public int[] generateRoundKey() {
 
         int[] integerMatrix = StringMatrixToInteger(PHAKey);
-        for(int index : integerMatrix) System.out.print(index + " ");
+        int[] roundedMatrix = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        
+        String inverseIntegerMatrixString = "";
+        for(int index = 15; index >= 0; --index) inverseIntegerMatrixString += integerMatrix[index] + " ";
+        
+        String[] inverseIntegerMatrixArray = inverseIntegerMatrixString.split(" ");
+        for(int index = 0; index <= 15; index++)  roundedMatrix[index] = Integer.valueOf(inverseIntegerMatrixArray[index]);
 
+        return roundedMatrix;
     }
-    
+
 }
