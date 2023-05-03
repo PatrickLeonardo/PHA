@@ -1,8 +1,14 @@
 package test.main.hash;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Test;
+import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.Timeout.ThreadMode;
+
 import static org.junit.Assert.assertEquals;
 
+@Timeout(value = 5, unit = TimeUnit.SECONDS, threadMode = ThreadMode.SEPARATE_THREAD)
 public class HashEqualityProbabilityTest {
     
     public static double getProbability(int numberOfProbability){

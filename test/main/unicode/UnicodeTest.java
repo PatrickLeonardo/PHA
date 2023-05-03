@@ -1,17 +1,21 @@
 package test.main.unicode;
 
-import static org.junit.Assert.assertEquals;
-
 import java.nio.charset.Charset;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
+import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.Timeout.ThreadMode;
 
+import static org.junit.Assert.assertEquals;
+
+@Timeout(value = 5, unit = TimeUnit.SECONDS, threadMode = ThreadMode.SEPARATE_THREAD)
 public class UnicodeTest {
 
     public static final Charset ISO_8859_1 = Charset.forName("ISO-8859-1");
     public static final Charset UTF_8 = Charset.forName("UTF-8");
 
-    public static char[] CharacteresUnicodeTest(){
+    public static char[] CharacteresUnicode(){
 
         final char[] CHARACTERS = {
             
@@ -37,7 +41,7 @@ public class UnicodeTest {
         String myString = new String("ã, á, â");
         byte[] myByte = myString.getBytes(UTF_8);
         String UTF_8_String = new String(myByte);
-        char[] characters = CharacteresUnicodeTest();
+        char[] characters = CharacteresUnicode();
 
         assertEquals('a', characters[0]);
         assertEquals("ã, á, â", UTF_8_String);

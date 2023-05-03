@@ -1,8 +1,13 @@
 package test.main.algorithm.utilities;
 
-import org.junit.Test;
+import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Test;
+import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.Timeout.ThreadMode;
+
+@Timeout(value = 5, unit = TimeUnit.SECONDS, threadMode = ThreadMode.SEPARATE_THREAD)
 public class bitManagerTest {
 
     public static String byteToBit(final byte sufixByte){
@@ -20,4 +25,5 @@ public class bitManagerTest {
         assertEquals("00001001", byteConverted);
 
     }
+
 }
