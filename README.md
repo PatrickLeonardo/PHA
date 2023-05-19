@@ -1,8 +1,10 @@
 # PHA-256-Procedural-Hash-Algorithm (In Development)
 
-The PHA (Procedural Hash Algorithm) is a hashing algorithm that is based on a form of procedural cryptography. <br>
+The PHA (Procedural Hash Algorithm) is a hashing algorithm that is based on a form of procedural cryptography.
 
-The hash contains a size of 256 bits (32 bytes) with several characters from the Unicode table. <br>
+The hash contains a size of 256 bits (32 bytes) with several characters from the Unicode table.
+
+Made to be run in java codes by importing the jar or maven package.
 
 It is currently being developed by only one person, so it may take some time to complete.
 
@@ -23,17 +25,15 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 
 <hr>
 
-## Requeriments (recommends)
+## Requeriments (recommendations)
 
-- Java 19 ( version tested )
+- Java 19 or 20 ( version tested )
 - A CLI ( for runner java code )
 
 <hr>
 
 ## Versions
 
-- Java v.20 2023-03-21
-- Openjdk v.19.0.2 2023-01-17
 - Junit v.4.13.2
 - Junit-Jupter  v5.9.2
 - Maven v3.8.7
@@ -51,8 +51,8 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 - C++ v.13.1.1 20230229
 - ShellScript v.7.3.4
 
-<br>
+<hr>
 
 ## Test
 
-Todos os testes estão armazenados em formas de arquivos java na pasta [test](https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm/tree/main/test) e estão sendo executados por meio do Visual Studio Code com o uso da biblioteca Hamcrest
+All tests are stored in forms of java files in the [test](https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm/tree/main/test) folder and are being executed through Visual Studio Code using the Hamcrest library
