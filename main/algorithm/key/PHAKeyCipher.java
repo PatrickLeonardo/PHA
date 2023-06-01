@@ -25,10 +25,10 @@ public class PHAKeyCipher {
         }
 
         byte[][][] matrix = {
-            { {00000000}, {00000000}, {00000000}, {00000000} },
-            { {00000000}, {00000000}, {00000000}, {00000000} },
-            { {00000000}, {00000000}, {00000000}, {00000000} },
-            { {00000000}, {00000000}, {00000000}, {00000000} }
+            { {0x00}, {0x00}, {0x00}, {0x00} },
+            { {0x00}, {0x00}, {0x00}, {0x00} },
+            { {0x00}, {0x00}, {0x00}, {0x00} },
+            { {0x00}, {0x00}, {0x00}, {0x00} }
         };
 
         for(int line = 0; line < 4; line++){
@@ -49,7 +49,7 @@ public class PHAKeyCipher {
         //PHAKey = PHAKey.replaceAll("\\.", "");
     
         SubBytes subBytes = new SubBytes(PHAKey);
-        subBytes.generateRoundKey();
+        PHAKey = subBytes.generateRoundKey();
 
         return PHAKey;
     }
