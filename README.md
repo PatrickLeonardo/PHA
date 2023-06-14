@@ -27,7 +27,7 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 
 ## Requeriments (recommendations)
 
-- Java 19 or 20 ( version tested )
+- Java v.20 ( version tested )
 - A CLI ( for runner java code )
 
 <hr>
@@ -42,14 +42,13 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 ### OS's
 
 - Windows 11 Pro x86_64
-- Arch Linux on Windows 10 x86_64
 - Ubuntu 22.04.2 LTS on Windows 10 x86_64
+- Kali GNU/Linux Rolling on Windows 10 x86_64
 
 ### Languages
 
-- Java v.20 2023-03-21
-- C++ v.13.1.1 20230229
-- ShellScript v.7.3.4
+- Java v.20.0.1 2023-04-18
+- ShellScript (PowerShell) v.7.3.4
 
 <hr>
 
