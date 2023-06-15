@@ -50,7 +50,7 @@ public class PHAKeyCipher {
     
         SubBytes subBytes = new SubBytes(PHAKey);
         PHAKey = subBytes.generateRoundKey();
-
+        PHAKey = PHAKey.substring(0, PHAKey.length() - 1);
         return PHAKey;
     }
 
