@@ -11,7 +11,7 @@ public class SubBytes {
     }
 
     private int[] StringMatrixToInteger(String matrix) {
-        
+
         String[] stringMatrix;
         stringMatrix = matrix.split(" ");
         int[] integerMatrix = {
@@ -19,14 +19,13 @@ public class SubBytes {
             0x00, 0x00, 0x00, 0x00,
             0x00, 0x00, 0x00, 0x00,
             0x00, 0x00, 0x00, 0x00,
-            
         };
 
-        for(int index = 0; index < stringMatrix.length; index++) {
+        for(int index = 0; index < stringMatrix.length; ++index) {
             try {
                 integerMatrix[index] = Byte.parseByte(stringMatrix[index], 2);
-            } catch (NumberFormatException e) {
-                integerMatrix[index] ++;
+            } catch (NumberFormatException NumberFormatException) {
+                NumberFormatException.printStackTrace();
             }
         }
 
