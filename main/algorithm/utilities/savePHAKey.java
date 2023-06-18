@@ -19,7 +19,8 @@ public class savePHAKey {
      * <blockquote><pre>
      *      savePHAKey.writeEncodedKey(encodedKey);
      * </blockquote></pre>
-     * @param encodedKey
+     * @param encodedKey String The encoded key object.
+     * @return none.
      */
     public static void writeEncodedKey(String encodedKey) {
 

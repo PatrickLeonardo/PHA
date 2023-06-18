@@ -58,7 +58,7 @@ public class PHAKeyCipherTest {
         //PHAKey = PHAKey.replaceAll("\\.", "");
     
         SubBytes subBytes = new SubBytes(PHAKey);
-        subBytes.generateRoundKey();
+        subBytes.generateInvertedKey();
 
         return PHAKey;
     }

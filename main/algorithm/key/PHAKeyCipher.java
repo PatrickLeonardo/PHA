@@ -3,12 +3,21 @@ package main.algorithm.key;
 import main.algorithm.utilities.bitManager;
 import main.hash.HashEqualityProbability;
 
+/**
+ * <p>{@code PHAKeyCipher} is the class in which part of the cipher for the encryption key is made, it is also used to create the key and perform its assembly. </p>
+ */
 public class PHAKeyCipher {
 
     protected static String PHAKey;
     private final static Integer POW_PREFIX = 1024;
     private static Long POW_SUFIX;
 
+    /**
+     * <p>Method used for create the encode key.</p>
+     * <p>This key is used for encode and decode any message.</p>
+     * @param prefix Integer Value for prefix.
+     * @return String containing the key.
+     */
     public static String createPHAKey(final Integer prefix){
 
         POW_SUFIX = (long)Math.pow(10, (String.valueOf(prefix).length()) - 1);
@@ -49,11 +58,9 @@ public class PHAKeyCipher {
         //PHAKey = PHAKey.replaceAll("\\.", "");
     
         SubBytes subBytes = new SubBytes(PHAKey);
-        PHAKey = subBytes.generateRoundKey();
+        PHAKey = subBytes.generateInvertedKey();
         PHAKey = PHAKey.substring(0, PHAKey.length() - 1);
         return PHAKey;
     }
-
-    public static void defineKeySpec(){ }
 
 }
