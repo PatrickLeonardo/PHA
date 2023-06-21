@@ -1,6 +1,7 @@
 package main.algorithm.key;
 
 import main.algorithm.utilities.bitManager;
+import main.algorithm.utilities.savePHAKey;
 import main.hash.HashEqualityProbability;
 
 /**
@@ -18,7 +19,7 @@ public class PHAKeyCipher {
      * @param prefix Integer Value for prefix.
      * @return String containing the key.
      */
-    public static String createPHAKey(final Integer prefix){
+    public static void createPHAKey(final Integer prefix){
 
         POW_SUFIX = (long)Math.pow(10, (String.valueOf(prefix).length()) - 1);
         
@@ -43,7 +44,7 @@ public class PHAKeyCipher {
         for(int line = 0; line < 4; line++){
             for(int column = 0; column < 4; column++){
                 
-                matrix[line][column][0] = (byte)Math.log(Math.pow((POW_PREFIX * (line + column)), prefix / POW_SUFIX));
+                matrix[line][column][0] = (byte)Math.log10(Math.pow((POW_PREFIX * (line + column)), prefix / POW_SUFIX));
                 if (Double.isNaN(matrix[line][column][0]) || Double.isInfinite(matrix[line][column][0])){
                     throw new java.lang.ArithmeticException();
                 }
@@ -60,7 +61,8 @@ public class PHAKeyCipher {
         SubBytes subBytes = new SubBytes(PHAKey);
         PHAKey = subBytes.generateInvertedKey();
         PHAKey = PHAKey.substring(0, PHAKey.length() - 1);
-        return PHAKey;
+        
+        savePHAKey.writeEncodedKey(PHAKey);
     }
 
 }
