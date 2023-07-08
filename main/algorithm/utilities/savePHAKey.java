@@ -15,8 +15,7 @@ import main.algorithm.key.CreateHash;
 public class savePHAKey {
     
     protected static String encodeKey(String PHAKey){
-        String HashEncoded = CreateHash.mountUnicodeInPHAKey(PHAKey);
-        return HashEncoded;
+         return CreateHash.mountUnicodeInPHAKey(PHAKey);
     }
 
     /**
@@ -24,8 +23,7 @@ public class savePHAKey {
      * <blockquote><pre>
      *      savePHAKey.writeEncodedKey(encodedKey);
      * </blockquote></pre>
-     * @param encodedKey String The encoded key object.
-     * @return none.
+     * @param Key String The encoded key object.
      */
     public static void writeEncodedKey(String Key) {
 

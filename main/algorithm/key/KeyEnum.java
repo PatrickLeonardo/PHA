@@ -9,7 +9,7 @@ public enum KeyEnum {
         { {0x00}, {0x00}, {0x00}, {0x00} }        
     });
     
-    private byte value[][][];
+    private final byte[][][] value;
     
     KeyEnum(byte[][][] value){
         this.value = value;

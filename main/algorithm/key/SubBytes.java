@@ -8,21 +8,20 @@ import main.algorithm.utilities.bitManager;
  */
 public class SubBytes {
     
-    protected String PHAKey;
+    protected StringBuilder PHAKey;
 
-    public SubBytes(String PHAKey) {
+    public SubBytes(StringBuilder PHAKey) {
         this.PHAKey = PHAKey;
     }
 
     /**
-     * <p>This method is used only to transform the String matrix into an Integer matrix.</p> 
-     * @param matrix
+     * <p>This method is used only to transform the String matrix into an Integer matrix.</p>
      * @return int[] Representation of the String matrix in the Integer matrix.
      */
-    private int[] StringMatrixToInteger(String matrix) {
+    private int[] StringMatrixToInteger(StringBuilder matrix) {
 
         String[] stringMatrix;
-        stringMatrix = matrix.split(" ");
+        stringMatrix = matrix.toString().split(" ");
         int[] integerMatrix = {
             0x00, 0x00, 0x00, 0x00,
             0x00, 0x00, 0x00, 0x00,
@@ -43,11 +42,11 @@ public class SubBytes {
     }
 
     /**
-     * <p>Is used for generate the rotation of the key (in a interger matrix).
-     * This is make with the a invertion of the values, utilizing loops.
+     * <p>Is used for generate the rotation of the key (in integer matrix).
+     * This is make with the inversion of the values, utilizing loops.
      * @return String Inverted key.
      */
-    public String generateInvertedKey() {
+    public StringBuilder generateInvertedKey() {
 
         int[] integerMatrix = StringMatrixToInteger(PHAKey);
         int[] roundedMatrix = {
@@ -56,17 +55,17 @@ public class SubBytes {
             0x00, 0x00, 0x00, 0x00,
             0x00, 0x00, 0x00, 0x00
         };
-        String roudedPHAKey = "";
+        StringBuilder roudedPHAKey = new StringBuilder();
 
-        String inverseIntegerMatrixString = "";
+        StringBuilder inverseIntegerMatrixString = new StringBuilder();
         for(int index = 15; index >= 0x00; --index) {
-            inverseIntegerMatrixString += integerMatrix[index] + " ";
+            inverseIntegerMatrixString.append(integerMatrix[index]).append(" ");
         }
 
-        String[] inverseIntegerMatrixArray = inverseIntegerMatrixString.split(" ");
+        String[] inverseIntegerMatrixArray = inverseIntegerMatrixString.toString().split(" ");
         for(int index = 0; index <= 15; index++) {
-            roundedMatrix[index] = Integer.valueOf(inverseIntegerMatrixArray[index]);
-            roudedPHAKey += bitManager.byteToBit((byte)roundedMatrix[index]) + " ";
+            roundedMatrix[index] = Integer.parseInt(inverseIntegerMatrixArray[index]);
+            roudedPHAKey.append(bitManager.byteToBit((byte)roundedMatrix[index])).append(" ");
         }
 
         return roudedPHAKey;
