@@ -35,7 +35,6 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 ## Versions
 
 - Junit v.4.13.2
-- Junit-Jupter  v5.9.2
 - Maven v3.9.3
 
 ### OS's
