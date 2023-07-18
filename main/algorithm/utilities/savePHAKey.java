@@ -30,7 +30,7 @@ public class savePHAKey {
         String encodedKey = encodeKey(Key);
 
         try {
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("encodedKey.txt"));
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("../encodedKey.txt"));
             bufferedWriter.write(encodedKey);
             bufferedWriter.close();
         } catch (IOException e) {
