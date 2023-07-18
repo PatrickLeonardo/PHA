@@ -36,19 +36,17 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 
 - Junit v.4.13.2
 - Junit-Jupter  v5.9.2
-- Maven v3.8.7
-- Hamcrest v.2.2
+- Maven v3.9.3
 
 ### OS's
 
-- Windows 11 Pro x86_64
+- Windows 10 Pro
 - Ubuntu 22.04.2 LTS on Windows 10 x86_64
-- Kali GNU/Linux Rolling on Windows 10 x86_64
 
 ### Languages
 
 - Java v.20.0.1 2023-04-18
-- ShellScript (PowerShell) v.7.3.4
+- ShellScript (PowerShell) v.5.1.19041.3031
 
 <hr>
 
