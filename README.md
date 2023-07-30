@@ -39,8 +39,7 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 
 ### OS's
 
-- Windows 10 Pro
-- Ubuntu 22.04.2 LTS on Windows 10 x86_64
+- BackBox Linux 8 - amd64 (Ubuntu 22.04.2 LTS x86_64)
 
 ### Languages
 
