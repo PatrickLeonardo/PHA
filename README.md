@@ -35,7 +35,7 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 ## Versions
 
 - Junit v.4.13.2
-- Maven v3.9.3
+- Maven v3.6.3
 
 ### OS's
 
@@ -43,11 +43,11 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 
 ### Languages
 
-- Java v.20.0.1 2023-04-18
-- ShellScript (PowerShell) v.5.1.19041.3031
+- Java 20.0.2 2023-07-18
+- ShellScript (PowerShell 7.3.6)
 
 <hr>
 
 ## Test
 
-All tests are stored in forms of java files in the [test](https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm/tree/main/test) folder and are being executed through Visual Studio Code using the Hamcrest library
+All tests are stored in forms of java files in the [test](https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm/tree/main/test) folder and are being executed through IntelliJ IDEA Ultimate 2023.2
