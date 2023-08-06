@@ -50,4 +50,4 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 
 ## Test
 
-All tests are stored in forms of java files in the [test](https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm/tree/main/test) folder and are being executed through IntelliJ IDEA Ultimate 2023.2
+All tests are stored in forms of java files in the [test](https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm/tree/main/test) folder.
