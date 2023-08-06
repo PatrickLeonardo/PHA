@@ -1,6 +1,7 @@
 package main.unicode;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * <p>Unicode class is used to get some characters from unicode table.
@@ -8,18 +9,17 @@ import java.nio.charset.Charset;
  */
 public class Unicode {
 
-    public static final Charset ISO_8859_1 = Charset.forName("ISO-8859-1");
-    public static final Charset UTF_8 = Charset.forName("UTF-8");
+    public static final Charset ISO_8859_1 = StandardCharsets.ISO_8859_1;
+    public static final Charset UTF_8 = StandardCharsets.UTF_8;
     
     /**
      * <p>This method is used to get an array of chars, containing some characters from the unicode table.
      * These characters are used to encode the key and the corresponding messages.
-     * @return char[] Containg the characters.
+     * @return char[] Contain the characters.
      */
-    public static char[] CharacteresUnicode(){
+    public static char[] CharactersUnicode(){
 
-        final char[] CHARACTERS = {
-
+        return new char[] {
             'a', 'b', 'c', 'd', 'e',
             'f', 'g', 'h', 'i', 'j',
             'k', 'l', 'm', 'n', 'o',
@@ -29,10 +29,7 @@ public class Unicode {
             '&', '#', '$', '%', '/',
             '0', '1', '2', '3', '4',
             '5', '6', '7', '8', '9'
-
         };
-
-        return CHARACTERS;
 
     }
 

@@ -4,6 +4,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import main.algorithm.key.CreateHash;
+
 /**
  * <p>
  * The {@code savePHAKey} class is a class for save the PHAKey in a text file with the encoded key.
@@ -12,17 +14,20 @@ import java.io.IOException;
  */
 public class savePHAKey {
     
-    protected static void encodedPHAKey(){}
+    protected static String encodeKey(String PHAKey){
+        return CreateHash.mountUnicodeInPHAKey(PHAKey);
+    }
 
     /**
      * These method is used for write encoded key automatic in a text file. Example:
      * <blockquote><pre>
      *      savePHAKey.writeEncodedKey(encodedKey);
      * </blockquote></pre>
-     * @param encodedKey String The encoded key object.
-     * @return none.
+     * @param Key String The encoded key object.
      */
-    public static void writeEncodedKey(String encodedKey) {
+    public static void writeEncodedKey(String Key) {
+
+        String encodedKey = encodeKey(Key);
 
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("encodedKey.txt"));
