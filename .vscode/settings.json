@@ -6,7 +6,10 @@
         "target/opentest4j-1.2.0.jar",
         "target/apiguardian-api-1.1.2.jar",
         "target/junit-jupiter-api-5.9.2.jar",
-        "target/junit-platform-commons-1.9.2.jar"
+        "target/junit-platform-commons-1.9.2.jar",
+        "test/target/apiguardian-api-1.1.2.jar",
+        "test/target/junit-jupiter-api-5.9.2.jar",
+        "test/target/junit-4.13.2.jar"
     ],
     "java.project.sourcePaths": [
         ""
