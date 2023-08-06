@@ -1,4 +1,4 @@
-package test.main.algorithm.utilities;
+package test.main.algorithm.key;
 
 import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
@@ -7,17 +7,16 @@ import org.junit.Test;
 import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.Timeout.ThreadMode;
 
-import main.algorithm.utilities.bitManager;
+import main.algorithm.key.KeyEnum;
 
 @Timeout(value = 5, unit = TimeUnit.SECONDS, threadMode = ThreadMode.SEPARATE_THREAD)
-public class bitManagerTest {
+public class KeyEnumTest {
 
     @Test
-    public void byteToBitTest(){
+    public void MatrixEnumTest(){
 
-        String byteConverted = bitManager.byteToBit((byte)9);
-        assertEquals("00001001", byteConverted);
+        byte[][][] matrix = KeyEnum.MATRIX.getValue();
+        assertEquals(0, matrix[0][0][0]);
 
     }
-
 }
