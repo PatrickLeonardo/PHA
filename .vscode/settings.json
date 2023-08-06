@@ -5,5 +5,8 @@
         "test/target/junit-jupiter-api-5.9.2.jar",
         "test/target/apiguardian-api-1.1.2.jar",
         "test/target/hamcrest-2.2.jar"
+    ],
+    "java.project.sourcePaths": [
+        ""
     ]
 }
