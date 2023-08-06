@@ -27,7 +27,7 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 
 ## Requeriments (recommendations)
 
-- Java 19 or 20 ( version tested )
+- Java v.20 ( version tested )
 - A CLI ( for runner java code )
 
 <hr>
@@ -35,24 +35,19 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 ## Versions
 
 - Junit v.4.13.2
-- Junit-Jupter  v5.9.2
-- Maven v3.8.7
-- Hamcrest v.2.2
+- Maven v3.6.3
 
 ### OS's
 
-- Windows 11 Pro x86_64
-- Arch Linux on Windows 10 x86_64
-- Ubuntu 22.04.2 LTS on Windows 10 x86_64
+- BackBox Linux 8 - amd64 (Ubuntu 22.04.2 LTS x86_64)
 
 ### Languages
 
-- Java v.20 2023-03-21
-- C++ v.13.1.1 20230229
-- ShellScript v.7.3.4
+- Java 20.0.2 2023-07-18
+- ShellScript (PowerShell 7.3.6)
 
 <hr>
 
 ## Test
 
-All tests are stored in forms of java files in the [test](https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm/tree/main/test) folder and are being executed through Visual Studio Code using the Hamcrest library
+All tests are stored in forms of java files in the [test](https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm/tree/main/test) folder and are being executed through IntelliJ IDEA Ultimate 2023.2
