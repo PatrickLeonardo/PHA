@@ -25,7 +25,7 @@ public class savePHAKey {
      * </blockquote></pre>
      * @param Key String The encoded key object.
      */
-    public static void writeEncodedKey(String Key) {
+    public static boolean writeEncodedKey(String Key) {
 
         String encodedKey = encodeKey(Key);
 
@@ -36,6 +36,8 @@ public class savePHAKey {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        return true;
 
     }
 

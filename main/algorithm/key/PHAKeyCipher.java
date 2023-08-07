@@ -18,7 +18,7 @@ public class PHAKeyCipher {
      * <p>This key is used for encode and decode any message.</p>
      * @param prefix Integer Value for prefix.
      */
-    public static void createPHAKey(final Integer prefix){
+    public static boolean createPHAKey(final Integer prefix){
 
         POW_SUFFIX = (long)Math.pow(10, (String.valueOf(prefix).length()) - 1);
         
@@ -59,6 +59,8 @@ public class PHAKeyCipher {
 
         String EncodedKey = PHAKey.substring(0, PHAKey.length() - 1);
         savePHAKey.writeEncodedKey(EncodedKey);
+
+        return true;
     }
 
 }
