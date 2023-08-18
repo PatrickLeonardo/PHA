@@ -1,5 +1,13 @@
 package main.algorithm.key;
 
+import java.io.IOException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
+import java.security.spec.InvalidKeySpecException;
+
+import org.bouncycastle.operator.OperatorCreationException;
+
 import main.algorithm.utilities.bitManager;
 import main.algorithm.utilities.savePHAKey;
 import main.hash.HashEqualityProbability;
@@ -17,8 +25,14 @@ public class PHAKeyCipher {
      * <p>Method used for create the encode key.</p>
      * <p>This key is used for encode and decode any message.</p>
      * @param prefix Integer Value for prefix.
+     * @throws KeyStoreException
+     * @throws CertificateException
+     * @throws InvalidKeySpecException
+     * @throws NoSuchAlgorithmException
+     * @throws OperatorCreationException
+     * @throws IOException
      */
-    public static boolean createPHAKey(final Integer prefix){
+    public static boolean createPHAKey(final Integer prefix) throws KeyStoreException, OperatorCreationException, NoSuchAlgorithmException, InvalidKeySpecException, CertificateException, IOException{
 
         POW_SUFFIX = (long)Math.pow(10, (String.valueOf(prefix).length()) - 1);
         
@@ -57,8 +71,9 @@ public class PHAKeyCipher {
         SubBytes subBytes = new SubBytes(PHAKey);
         PHAKey = subBytes.generateInvertedKey();
 
-        String EncodedKey = PHAKey.substring(0, PHAKey.length() - 1);
-        savePHAKey.writeEncodedKey(EncodedKey);
+        String encodedKey = PHAKey.substring(0, PHAKey.length() - 1);
+
+        savePHAKey.writeEncodedKey(encodedKey);
 
         return true;
     }
