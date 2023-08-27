@@ -1,14 +1,11 @@
 # PHA-256-Procedural-Hash-Algorithm (In Development)
 
-The PHA (Procedural Hash Algorithm) is a hashing algorithm that is based on a form of procedural cryptography.
+The PHA (Procedural Hash Algorithm) is a hashing algorithm that is based on a form of procedural cryptography.<br>
+The hash contains a size of 256 bits (32 bytes) with several characters from the Unicode table.<br>
+Made to be run in java codes by importing the jar or maven package.<br>
+It is currently being developed by only one person, so it may take some time to complete.<br>
 
-The hash contains a size of 256 bits (32 bytes) with several characters from the Unicode table.
-
-Made to be run in java codes by importing the jar or maven package.
-
-It is currently being developed by only one person, so it may take some time to complete.
-
-## [Download](https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm/archive/refs/heads/main.zip) | [Docs](https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm/blob/main/README.md)
+## [Download](https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm/archive/refs/heads/main.zip) | [Docs](https://patrickleonardo.github.io/PHA-256-Procedural-Hash-Algorithm/docs/https://patrickleonardo.github.io/PHA-256-Procedural-Hash-Algorithm/docs/)
 
 <hr>
 
@@ -18,12 +15,6 @@ It is currently being developed by only one person, so it may take some time to 
 ```
 git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 ```
-
-#### Zip File:
-
-[Download](https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm/archive/refs/heads/main.zip)
-
-<hr>
 
 ## Requeriments (recommendations)
 
