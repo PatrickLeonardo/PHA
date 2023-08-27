@@ -1,6 +1,6 @@
-# PHA-256-Procedural-Hash-Algorithm (In Development)
+# PHA-256-Procedural-Hash-Algorithm
 
-The PHA (Procedural Hash Algorithm) is a hashing algorithm that is based on a form of procedural cryptography.<br>
+PHA-256 (Procedural Hash Algorithm) is a hashing algorithm that is based on a form of procedural cryptography.<br>
 The hash contains a size of 256 bits (32 bytes) with several characters from the Unicode table.<br>
 Made to be run in java codes by importing the jar or maven package.<br>
 It is currently being developed by only one person, so it may take some time to complete.<br>
