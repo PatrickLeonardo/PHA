@@ -1,12 +1,6 @@
 package main.algorithm.key;
 
 import java.io.IOException;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.CertificateException;
-import java.security.spec.InvalidKeySpecException;
-
-import org.bouncycastle.operator.OperatorCreationException;
 
 import main.algorithm.utilities.bitManager;
 import main.algorithm.utilities.savePHAKey;
@@ -32,7 +26,7 @@ public class PHAKeyCipher {
      * @throws OperatorCreationException
      * @throws IOException
      */
-    public static boolean createPHAKey(final Integer prefix) throws KeyStoreException, OperatorCreationException, NoSuchAlgorithmException, InvalidKeySpecException, CertificateException, IOException{
+    public static boolean createPHAKey(final Integer prefix) throws IOException{
 
         POW_SUFFIX = (long)Math.pow(10, (String.valueOf(prefix).length()) - 1);
         
