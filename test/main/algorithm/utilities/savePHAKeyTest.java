@@ -2,6 +2,7 @@ package test.main.algorithm.utilities;
 
 import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
@@ -14,7 +15,7 @@ import main.algorithm.utilities.savePHAKey;
 public class savePHAKeyTest {
     
     @Test
-    public void PHAKeySaverTest(){
+    public void PHAKeySaverTest() throws IOException{
 
         assertTrue(savePHAKey.writeEncodedKey("null"));
 

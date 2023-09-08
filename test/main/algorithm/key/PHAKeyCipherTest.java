@@ -2,6 +2,7 @@ package test.main.algorithm.key;
 
 import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
@@ -14,7 +15,7 @@ import main.algorithm.key.PHAKeyCipher;
 public class PHAKeyCipherTest {
     
     @Test
-    public void PHAKeyTest(){
+    public void PHAKeyTest() throws IOException{
 
         assertTrue(PHAKeyCipher.createPHAKey(9));
         
