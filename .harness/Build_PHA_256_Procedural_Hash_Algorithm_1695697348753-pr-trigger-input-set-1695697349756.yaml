@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_PHA_256_Procedural_Hash_Algorithm_1695697348753-pr-trigger-input-set
+  identifier: Build_PHA_256_Procedural_Hash_Algorithm_1695697348753prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_PHA_256_Procedural_Hash_Algorithm_1695697348753
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
