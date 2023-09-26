@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_PHA_256_Procedural_Hash_Algorithm_1695697348753-push-trigger-input-set
+  identifier: Build_PHA_256_Procedural_Hash_Algorithm_1695697348753pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_PHA_256_Procedural_Hash_Algorithm_1695697348753
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
