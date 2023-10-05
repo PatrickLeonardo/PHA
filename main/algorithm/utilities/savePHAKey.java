@@ -12,10 +12,6 @@ import java.io.IOException;
  * </p>
  */
 public class savePHAKey {
-    
-    protected static String encodeKey(String PHAKey){
-        return CreateHash.mountUnicodeInPHAKey(PHAKey);
-    }
 
     /**
      * These method is used for write encoded key automatic in a text file. Example:
@@ -28,7 +24,7 @@ public class savePHAKey {
     public static boolean writeEncodedKey(String Key) throws IOException {
 
         String stringKey = new String(Key);
-        String encodedKey = encodeKey(stringKey);
+        String encodedKey = CreateHash.mountUnicodeInPHAKey(stringKey);
     
         byte[] key = new byte[encodedKey.length() * 2];
         for (int index = 0; index < encodedKey.length(); index++){
@@ -37,10 +33,12 @@ public class savePHAKey {
             key[index * 2 + 1] = (byte) c;
         }
 
-        try (FileOutputStream FileOutputStream = new FileOutputStream("encodedKey.jks")){
-            FileOutputStream.write(key);
-            return true;
+        try (FileOutputStream fileOutputStream = new FileOutputStream("encodedKey.jks")) {
+            fileOutputStream.write(key);
+            fileOutputStream.close();
         }
+
+        return true;
         
     }
 
