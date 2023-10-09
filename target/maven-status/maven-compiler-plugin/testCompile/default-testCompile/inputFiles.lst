@@ -1,0 +1,9 @@
+/home/kali/Projects/PHA-256/src/test/java/pha/main/algorithm/key/CreateHashTest.java
+/home/kali/Projects/PHA-256/src/test/java/pha/main/algorithm/key/SubBytesTest.java
+/home/kali/Projects/PHA-256/src/test/java/pha/main/algorithm/utilities/bitManagerTest.java
+/home/kali/Projects/PHA-256/src/test/java/pha/main/hash/HashEqualityProbabilityTest.java
+/home/kali/Projects/PHA-256/src/test/java/pha/main/algorithm/utilities/savePHAKeyTest.java
+/home/kali/Projects/PHA-256/src/test/java/pha/AppTest.java
+/home/kali/Projects/PHA-256/src/test/java/pha/main/unicode/UnicodeTest.java
+/home/kali/Projects/PHA-256/src/test/java/pha/main/algorithm/key/PHAKeyCipherTest.java
+/home/kali/Projects/PHA-256/src/test/java/pha/main/algorithm/key/KeyEnumTest.java
