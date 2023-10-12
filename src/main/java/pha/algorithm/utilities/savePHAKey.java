@@ -1,7 +1,9 @@
 package pha.algorithm.utilities;
 
-import pha.algorithm.key.CreateHash;
-
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -23,18 +25,11 @@ public class savePHAKey {
      */
     public static boolean writeEncodedKey(String Key) throws IOException {
 
-        String stringKey = new String(Key);
-        String encodedKey = CreateHash.mountUnicodeInPHAKey(stringKey);
-    
-        byte[] key = new byte[encodedKey.length() * 2];
-        for (int index = 0; index < encodedKey.length(); index++){
-            char c = encodedKey.charAt(index);
-            key[index * 2] = (byte) (c >> 8);
-            key[index * 2 + 1] = (byte) c;
-        }
-
-        try (FileOutputStream fileOutputStream = new FileOutputStream("encodedKey.jks")) {
-            fileOutputStream.write(key);
+        try (OutputStream fileOutputStream = new FileOutputStream("encodedKey.jks")) {
+            Writer writer = new OutputStreamWriter(fileOutputStream);
+            BufferedWriter buffer = new BufferedWriter(writer);
+            buffer.write(Key);
+            buffer.close();
             fileOutputStream.close();
         }
 

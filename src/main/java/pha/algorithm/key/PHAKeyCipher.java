@@ -21,10 +21,9 @@ public class PHAKeyCipher {
      * @param prefix Integer Value for prefix.
      * @throws IOException
      */
-    public static boolean createPHAKey(final Integer prefix) throws IOException{
+    public static boolean createPHAKey(final Integer prefix) throws IOException {
 
-        POW_SUFFIX = (long)Math.pow(10, (String.valueOf(prefix).length()) - 1);
-        
+        // verify prefix
         try {
             int prefixHashCode = prefix.hashCode();
             double probability = new HashEqualityProbability().getProbability(prefixHashCode);
@@ -36,8 +35,12 @@ public class PHAKeyCipher {
            exception.printStackTrace();
         }
 
+        // suffix of square root
+        POW_SUFFIX = (long)Math.pow(10, (String.valueOf(prefix).length()) - 1);
+
         byte[][][] matrix = KeyEnum.MATRIX.getValue();
 
+        // mouting indexes of the key
         for(int line = 0; line < 4; line++){
             for(int column = 0; column < 4; column++){
                 
@@ -52,11 +55,15 @@ public class PHAKeyCipher {
             }
         }
     
+        // reverse key
         PHAKey = new SubBytes(PHAKey).generateInvertedKey();
-
+ 
         String encodedKey = PHAKey.substring(0, PHAKey.length() - 1);
 
-        savePHAKey.writeEncodedKey(encodedKey);
+        String encodedHashedKey = CreateHash.mountUnicodeInPHAKey(encodedKey);
+
+        // save the key
+        savePHAKey.writeEncodedKey(encodedHashedKey);
 
         return true;
     }
