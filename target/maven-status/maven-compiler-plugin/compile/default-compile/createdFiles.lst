@@ -7,5 +7,6 @@ pha/App.class
 pha/hash/HashEqualityProbability.class
 pha/algorithm/utilities/bitManager.class
 pha/cli/interfaces/Index.class
+pha/utilities/HexaUtilitie.class
 pha/algorithm/key/CreateHash.class
 pha/algorithm/key/KeyEnum.class
