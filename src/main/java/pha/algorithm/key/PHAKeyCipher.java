@@ -60,7 +60,7 @@ public class PHAKeyCipher {
  
         String encodedKey = PHAKey.substring(0, PHAKey.length() - 1);
 
-        String encodedHashedKey = CreateHash.mountUnicodeInPHAKey(encodedKey);
+        String encodedHashedKey = CreateHash.mountHexPHAKey(encodedKey, prefix);
 
         // save the key
         savePHAKey.writeEncodedKey(encodedHashedKey);
