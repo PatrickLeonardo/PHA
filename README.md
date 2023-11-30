@@ -18,7 +18,7 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 
 ## Requeriments (recommendations)
 
-- Java v.20 ( version tested )
+- JDK v.21 ( version tested )
 - A CLI ( for runner java code )
 
 <hr>
@@ -26,7 +26,7 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 ## Versions
 
 - Junit v.4.13.2
-- Maven v3.6.3
+- Maven v3.8.7
 
 ### OS's
 
@@ -35,10 +35,10 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 ### Languages
 
 - Java 20.0.2 2023-07-18
-- ShellScript (PowerShell 7.3.6)
+- ShellScript -> zsh 5.9(x86_64-debian-linux-gnu)
 
 <hr>
 
 ## Test
 
-All tests are stored in forms of java files in the [test](https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm/tree/main/test) folder.
+All tests are stored in forms of java files in the [test](https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm/tree/main/src/test) folder.
