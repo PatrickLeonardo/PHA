@@ -2,6 +2,7 @@ package pha.main.algorithm.key;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -17,7 +18,9 @@ public class PHAKeyCipherTest {
     @Test
     public void PHAKeyTest() throws IOException{
 
-        assertTrue(PHAKeyCipher.createPHAKey(9));
+        File x = new File("");
+        File y = new File("");
+        assertTrue(PHAKeyCipher.createPHAKeys(x, y));
         
     }
 

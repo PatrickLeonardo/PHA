@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class CreateHash {
 
-    public static String mountHexPHAKey(String PHAKey, final Integer prefix){
+    public static String mountHexPHAKey(String PHAKey){
     
         String PHAKeyArray[] = PHAKey.split(" ");
 
@@ -14,15 +14,12 @@ public class CreateHash {
 
             int intValue = Integer.parseInt(PHAKeyArray[byteIndex], 2);
             
-            String[] randomValue = generatePseudoNumberRamdom(prefix, intValue, 1000, new Random().nextInt(intValue + 1), 1);
+            String[] randomValue = generatePseudoNumberRamdom(1 ,intValue, 1000, new Random().nextInt(intValue + 1), 1);
             
-            System.out.println(randomValue[0]);
-
             String hexValue = "0x" + Integer.toHexString(Integer.valueOf(randomValue[0]));
             
             PHAKeyHash.append(hexValue);
         }
-        System.out.println(PHAKeyHash);
        
         return PHAKeyHash.toString();
     }

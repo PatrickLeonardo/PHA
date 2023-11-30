@@ -6,6 +6,7 @@ import java.io.Writer;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
+    import java.io.File;
 
 /**
  * <p>
@@ -23,7 +24,7 @@ public class savePHAKey {
      * @param Key String The encoded key object.
      * @throws IOException
      */
-    public static boolean writeEncodedKey(String Key) throws IOException {
+    public static boolean writeEncodedKey(File publicKeyFile, File privateKeyFile, String Key) throws IOException {
 
         try (OutputStream fileOutputStream = new FileOutputStream("encodedKey.jks")) {
             Writer writer = new OutputStreamWriter(fileOutputStream);

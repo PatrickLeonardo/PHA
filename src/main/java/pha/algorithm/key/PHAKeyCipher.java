@@ -1,10 +1,10 @@
 package pha.algorithm.key;
 
 import java.io.IOException;
+import java.io.File;
 
 import pha.algorithm.utilities.bitManager;
 import pha.algorithm.utilities.savePHAKey;
-import pha.hash.HashEqualityProbability;
 
 /**
  * <p>{@code PHAKeyCipher} is the class in which part of the cipher for the encryption key is made, it is also used to create the key and perform its assembly. </p>
@@ -21,51 +21,39 @@ public class PHAKeyCipher {
      * @param prefix Integer Value for prefix.
      * @throws IOException
      */
-    public static boolean createPHAKey(final Integer prefix) throws IOException {
+    public static boolean createPHAKeys(File publicKeyFile, File privateKeyFile) throws IOException {
 
-        // verify prefix
-        try {
-            int prefixHashCode = prefix.hashCode();
-            double probability = new HashEqualityProbability().getProbability(prefixHashCode);
-            
-            if (probability >= 2){
-                throw new IllegalArgumentException();
-            }
-        } catch (Exception exception) {
-           exception.printStackTrace();
-        }
-
-        // suffix of square root
-        POW_SUFFIX = (long)Math.pow(10, (String.valueOf(prefix).length()) - 1);
+        // Suffix of square root
+        POW_SUFFIX = (long)Math.pow(10, (0x00));
 
         byte[][][] matrix = KeyEnum.MATRIX.getValue();
 
-        // mouting indexes of the key
-        for(int line = 0; line < 4; line++){
-            for(int column = 0; column < 4; column++){
+        // Mouting indexes of the key
+        for(int line = 0; line < 4; line++) {
+            for(int column = 0; column < 4; column++) {
                 
-                matrix[line][column][0] = (byte)Math.log10(Math.pow((POW_PREFIX * (line + column)), prefix.doubleValue() / POW_SUFFIX));
+                matrix[line][column][0] = (byte)Math.log10(Math.pow((POW_PREFIX * (line + column)), POW_SUFFIX));
                 if (Double.isInfinite(matrix[line][column][0])){
                     throw new java.lang.ArithmeticException();
                 }
                 if (!String.valueOf(matrix[line][column][0]).equals("null")) {
                     PHAKey.append(bitManager.byteToBit(matrix[line][column][0])).append(" ");
                 }
-
+                
             }
         }
-    
-        // reverse key
+        
+        // Reverse key
         PHAKey = new SubBytes(PHAKey).generateInvertedKey();
- 
+        
         String encodedKey = PHAKey.substring(0, PHAKey.length() - 1);
 
-        String encodedHashedKey = CreateHash.mountHexPHAKey(encodedKey, prefix);
+        String encodedHashedKey = CreateHash.mountHexPHAKey(encodedKey);
 
-        // save the key
-        savePHAKey.writeEncodedKey(encodedHashedKey);
+        // Save the key
+        savePHAKey.writeEncodedKey(publicKeyFile, privateKeyFile, encodedHashedKey);
 
         return true;
     }
-
+    
 }
