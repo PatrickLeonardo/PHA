@@ -10,10 +10,11 @@ public class HashEqualityProbability {
 
     /**
      * This is the method used to get the hash equality probability number based on the birthday paradox.
-     * In which a calculation is made with the distributions and hash variation compared to the days of the year
+     * In which a calculation is made with the distributions and hash variation compared to the days of the year.
+     * @param numberOfProbability A integer for number of propability. 
      * @return double Probability number.
      */
-    public double getProbability(int numberOfProbability){
+    public double getProbability(final int numberOfProbability){
         
         double p = Math.pow((1.0/365), numberOfProbability);
         for(int i = (366 - numberOfProbability); i < 366; i++) p *= i;

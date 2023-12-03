@@ -4,31 +4,31 @@ import java.util.Random;
 
 public class CreateHash {
 
-    public static String mountHexPHAKey(String PHAKey){
+    public static String mountHexPHAKey(final String PHAKey){
     
-        String PHAKeyArray[] = PHAKey.split(" ");
+        final String PHAKeyArray[] = PHAKey.split(" ");
 
-        StringBuilder PHAKeyHash = new StringBuilder();
+        final StringBuilder PHAKeyHash = new StringBuilder();
 
         for(int byteIndex = 0; byteIndex < PHAKeyArray.length; byteIndex++) {
 
-            int intValue = Integer.parseInt(PHAKeyArray[byteIndex], 2);
+            final int intValue = Integer.parseInt(PHAKeyArray[byteIndex], 2);
             
-            String[] randomValue = generatePseudoNumberRamdom(1 ,intValue, 1000, new Random().nextInt(intValue + 1), 1);
+            final String[] randomValue = generatePseudoNumberRamdom(1 ,intValue, 1000, new Random().nextInt(intValue + 1), 1);
             
-            String hexValue = "0x" + Integer.toHexString(Integer.valueOf(randomValue[0]));
+            final String hexValue = "0x" + Integer.toHexString(Integer.valueOf(randomValue[0]));
             
             PHAKeyHash.append(hexValue);
         }
-       
+        
         return PHAKeyHash.toString();
     }
 
-    public static String[] generatePseudoNumberRamdom(int inital, int modulas, int multiplier, int random, int total) {
+    public static String[] generatePseudoNumberRamdom(final int inital, int modulas, final int multiplier, final int random, final int total) {
         
         modulas ++;
 
-        StringBuilder resultBuilder = new StringBuilder();
+        final StringBuilder resultBuilder = new StringBuilder();
 
         for(int index = 0; index < total; index++) {
             
@@ -36,7 +36,7 @@ public class CreateHash {
 
             try {
                 pre_index = ((inital * multiplier) * random) % modulas;
-            } catch(ArithmeticException exception) {
+            } catch(final ArithmeticException exception) {
                 exception.printStackTrace();
             } finally {
                 resultBuilder.append(pre_index);
@@ -44,7 +44,7 @@ public class CreateHash {
             }
 
         }
-       
+         
         return resultBuilder.toString().split(" ");
         
     }
