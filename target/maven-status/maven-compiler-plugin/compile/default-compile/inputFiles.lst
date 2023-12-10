@@ -1,4 +1,5 @@
 /home/kali/Documents/PHA-256-Procedural-Hash-Algorithm/src/main/java/pha/algorithm/key/SubBytes.java
+/home/kali/Documents/PHA-256-Procedural-Hash-Algorithm/src/main/java/pha/cli/repl/Repl.java
 /home/kali/Documents/PHA-256-Procedural-Hash-Algorithm/src/main/java/pha/algorithm/key/PHAKeyCipher.java
 /home/kali/Documents/PHA-256-Procedural-Hash-Algorithm/src/main/java/pha/cli/interfaces/Index.java
 /home/kali/Documents/PHA-256-Procedural-Hash-Algorithm/src/main/java/pha/algorithm/utilities/bitManager.java

@@ -20,7 +20,7 @@ public class savePHAKeyTest {
 
         File x = new File("");
         File y = new File("");
-        assertTrue(savePHAKey.writeEncodedKey(x, y, "null"));
+        assertTrue(savePHAKey.writeKeyPair(x, y, "null", "null"));
 
     }
 
