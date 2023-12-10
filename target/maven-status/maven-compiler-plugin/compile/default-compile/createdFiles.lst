@@ -9,3 +9,4 @@ pha/algorithm/utilities/bitManager.class
 pha/cli/interfaces/Index.class
 pha/algorithm/key/CreateHash.class
 pha/algorithm/key/KeyEnum.class
+pha/cli/repl/Repl.class
