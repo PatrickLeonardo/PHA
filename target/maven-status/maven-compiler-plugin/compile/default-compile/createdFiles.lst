@@ -3,8 +3,8 @@ pha/algorithm/utilities/savePHAKey.class
 pha/algorithm/key/PHAKeyCipher.class
 pha/unicode/Unicode.class
 pha/algorithm/key/SubBytes.class
-pha/App.class
 pha/hash/HashEqualityProbability.class
+pha/App.class
 pha/algorithm/utilities/bitManager.class
 pha/cli/interfaces/Index.class
 pha/algorithm/key/CreateHash.class
