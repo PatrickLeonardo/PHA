@@ -12,22 +12,22 @@ public class MainExecution {
      * @param args
      * @throws IOException
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(final String[] args) throws IOException {
 
-        File publicKeyFile = new File("publicKeyFile.jks");
-        File privateKeyFile = new File("privateKeyFile.jks");
+        final File publicKeyFile = new File("publicKeyFile.jks");
+        final File privateKeyFile = new File("privateKeyFile.jks");
 
         try {
             publicKeyFile.createNewFile();
             privateKeyFile.createNewFile();
-        } catch (IOException ioException) {
+        } catch (final IOException ioException) {
             ioException.printStackTrace();
         }
 
-        PHAKeyCipher.createPHAKeys(publicKeyFile, privateKeyFile);
+        PHAKeyCipher.createKeyPair(publicKeyFile, privateKeyFile);
 
-        BufferedReader bfPublicKey = new BufferedReader(new FileReader(publicKeyFile));
-        BufferedReader bfPrivateKey = new BufferedReader(new FileReader(privateKeyFile));
+        final BufferedReader bfPublicKey = new BufferedReader(new FileReader(publicKeyFile));
+        final BufferedReader bfPrivateKey = new BufferedReader(new FileReader(privateKeyFile));
 
         bfPublicKey.close();
         bfPrivateKey.close();

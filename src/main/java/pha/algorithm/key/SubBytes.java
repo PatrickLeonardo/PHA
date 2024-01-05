@@ -21,7 +21,9 @@ public class SubBytes {
     private int[] StringMatrixToInteger(StringBuilder matrix) {
 
         String[] stringMatrix;
+        System.out.println(matrix);
         stringMatrix = matrix.toString().split(" ");
+        
         int[] integerMatrix = {
             0x00, 0x00, 0x00, 0x00,
             0x00, 0x00, 0x00, 0x00,
