@@ -20,7 +20,7 @@ public class PHAKeyCipherTest {
 
         File x = new File("");
         File y = new File("");
-        assertTrue(PHAKeyCipher.createPHAKeys(x, y));
+        assertTrue(PHAKeyCipher.createKeyPair(x, y));
         
     }
 
