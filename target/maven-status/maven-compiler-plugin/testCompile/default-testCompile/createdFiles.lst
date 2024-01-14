@@ -1,2 +1,9 @@
+pha/main/cli/repl/ReplTest.class
 pha/main/algorithm/key/KeyEnumTest.class
+pha/main/hash/HashEqualityProbabilityTest.class
+pha/main/algorithm/key/PHAKeyCipherTest.class
+pha/AppTest.class
 pha/main/algorithm/utilities/savePHAKeyTest.class
+pha/main/algorithm/key/SubBytesTest.class
+pha/main/algorithm/utilities/bitManagerTest.class
+pha/main/unicode/UnicodeTest.class
