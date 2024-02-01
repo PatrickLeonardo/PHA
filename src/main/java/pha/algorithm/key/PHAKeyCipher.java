@@ -42,7 +42,9 @@ public class PHAKeyCipher {
         String privateKey = privateKeyHash.toString();
 
         // Save the key
-            savePHAKey.writeKeyPair(publicKeyFile, privateKeyFile, publicKey, privateKey);
+        if(savePHAKey.writeKeyPair(publicKeyFile, privateKeyFile, publicKey, privateKey)){
+            System.out.println("\n| Public and Private Key are created with successfull\n");
+        }
 
         return true;
     }
