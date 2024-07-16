@@ -2,11 +2,10 @@ package pha.algorithm.key;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 
 import pha.algorithm.utilities.bitManager;
 import pha.algorithm.utilities.savePHAKey;
-
-import java.util.Random;
 
 /**
  * <p>
@@ -31,22 +30,68 @@ public class PHAKeyCipher {
      */
     public static boolean createKeyPair(final File publicKeyFile, final File privateKeyFile) throws IOException {
         
-        StringBuilder publicKeyHash = createPublicKey();
-        StringBuilder privateKeyHash = createPrivateKey();
+        final StringBuilder publicKeyHash = createPublicKey();
+        final StringBuilder privateKeyHash = createPrivateKey();
 
         // Reverse key
         // publicKeyHash = new SubBytes(publicKeyHash).generateInvertedKey();
         // privateKeyHash = new SubBytes(privateKeyHash).generateInvertedKey();
         
-        String publicKey = publicKeyHash.toString();
-        String privateKey = privateKeyHash.toString();
+        final String publicKey = publicKeyHash.toString();
+        final String privateKey = privateKeyHash.toString();
 
         // Save the key
         if(savePHAKey.writeKeyPair(publicKeyFile, privateKeyFile, publicKey, privateKey)){
-            System.out.println("\n| Public and Private Key are created with successfull\n");
+            System.out.println("\n| Public and Private Key are created with successfull");
         }
 
         return true;
+    }
+
+    public static StringBuilder mountHexPHAKey(final String PHAKey){
+    
+        final String PHAKeyArray[] = PHAKey.split(" ");
+
+        final StringBuilder PHAKeyHash = new StringBuilder();
+
+        for(int byteIndex = 0; byteIndex < PHAKeyArray.length; byteIndex++) {
+
+            final int intValue = Integer.parseInt(PHAKeyArray[byteIndex], 2);
+            
+            final String[] randomValue = generatePseudoNumberRamdom(1, intValue, 1000, new Random().nextInt(intValue + 8 ^ 256), 1);
+            
+            final String hexValue = "0x" + Integer.toHexString(Integer.valueOf(randomValue[0]));
+
+            PHAKeyHash.append(hexValue);
+        }
+        
+        return PHAKeyHash;
+    }
+
+    public static String[] generatePseudoNumberRamdom(final int inital, int modulas, final int multiplier, final int random, final int total) {
+        
+        modulas += 100;
+
+        final StringBuilder resultBuilder = new StringBuilder();
+
+        for(int index = 0; index < total; index++) {
+            
+            int pre_value, value = 0;
+
+            try {
+                pre_value = ((inital * multiplier) * random) % modulas;
+                value = pre_value ^ random + modulas;
+            } catch(final ArithmeticException exception) {
+                exception.printStackTrace();
+            } finally {
+                resultBuilder.append(value);
+                resultBuilder.append(" ");
+            }
+
+        }
+         
+        return resultBuilder.toString().split(" ");
+        
     }
 
     private static StringBuilder createPublicKey() {
@@ -101,52 +146,6 @@ public class PHAKeyCipher {
         
         return encodedPrivateKey;
 
-    }
-
-    public static StringBuilder mountHexPHAKey(final String PHAKey){
-    
-        final String PHAKeyArray[] = PHAKey.split(" ");
-
-        final StringBuilder PHAKeyHash = new StringBuilder();
-
-        for(int byteIndex = 0; byteIndex < PHAKeyArray.length; byteIndex++) {
-
-            final int intValue = Integer.parseInt(PHAKeyArray[byteIndex], 2);
-            
-            final String[] randomValue = generatePseudoNumberRamdom(1, intValue, 1000, new Random().nextInt(intValue + 8 ^ 256), 1);
-            
-            final String hexValue = "0x" + Integer.toHexString(Integer.valueOf(randomValue[0]));
-
-            PHAKeyHash.append(hexValue);
-        }
-        
-        return PHAKeyHash;
-    }
-
-    public static String[] generatePseudoNumberRamdom(final int inital, int modulas, final int multiplier, final int random, final int total) {
-        
-        modulas += 100;
-
-        final StringBuilder resultBuilder = new StringBuilder();
-
-        for(int index = 0; index < total; index++) {
-            
-            int pre_value, value = 0;
-
-            try {
-                pre_value = ((inital * multiplier) * random) % modulas;
-                value = pre_value ^ random + modulas;
-            } catch(final ArithmeticException exception) {
-                exception.printStackTrace();
-            } finally {
-                resultBuilder.append(value);
-                resultBuilder.append(" ");
-            }
-
-        }
-         
-        return resultBuilder.toString().split(" ");
-        
     }
 
 }
