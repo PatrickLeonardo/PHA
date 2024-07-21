@@ -2,7 +2,8 @@ package pha.algorithm.key;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Random;
+import java.math.BigInteger;
+import java.security.SecureRandom;
 
 import pha.algorithm.utilities.bitManager;
 import pha.algorithm.utilities.savePHAKey;
@@ -55,12 +56,9 @@ public class PHAKeyCipher {
         final StringBuilder PHAKeyHash = new StringBuilder();
 
         for(int byteIndex = 0; byteIndex < PHAKeyArray.length; byteIndex++) {
-
-            final int intValue = Integer.parseInt(PHAKeyArray[byteIndex], 2);
             
-            final String[] randomValue = generatePseudoNumberRamdom(1, intValue, 1000, new Random().nextInt(intValue + 8 ^ 256), 1);
-            
-            final String hexValue = "0x" + Integer.toHexString(Integer.valueOf(randomValue[0]));
+            final String[] randomValue = generatePseudoNumberRamdom();            
+            final String hexValue = "0x" + String.valueOf(new BigInteger(randomValue[0]).toString(16));
 
             PHAKeyHash.append(hexValue);
         }
@@ -68,34 +66,38 @@ public class PHAKeyCipher {
         return PHAKeyHash;
     }
 
-    public static String[] generatePseudoNumberRamdom(final int inital, int modulas, final int multiplier, final int random, final int total) {
+    public static String[] generatePseudoNumberRamdom() {
         
-        modulas += 100;
-
         final StringBuilder resultBuilder = new StringBuilder();
+        final SecureRandom r = new SecureRandom();
+        BigInteger p, q, n, m, e, d;
 
-        for(int index = 0; index < total; index++) {
-            
-            int pre_value, value = 0;
+        for(int index = 0; index < 8; index++) {
 
             try {
-                pre_value = ((inital * multiplier) * random) % modulas;
-                value = pre_value ^ random + modulas;
+                
+                p = new BigInteger(256 / 2, 1000, r);
+                q = new BigInteger(256 / 2, 1000, r);
+                n = q.multiply(p);
+                m = n.gcd(q).subtract(p).add(BigInteger.ONE);
+                e = new BigInteger("256");
+                d = e.modInverse(m.abs());
+                
+                resultBuilder.append(d);
+                resultBuilder.append(" ");
+
             } catch(final ArithmeticException exception) {
                 exception.printStackTrace();
-            } finally {
-                resultBuilder.append(value);
-                resultBuilder.append(" ");
             }
 
         }
-         
+        
         return resultBuilder.toString().split(" ");
         
     }
 
     private static StringBuilder createPublicKey() {
-      
+         
         final byte[][][] matrix = KeyEnum.MATRIX.getValue();
 
         // Mouting indexes of the key
@@ -108,9 +110,7 @@ public class PHAKeyCipher {
                 }
                 if (!String.valueOf(matrix[line][column][0]).equals("null")) {
                     PHAKey.append(bitManager.byteToBit(matrix[line][column][0])).append(" ");
-                }
-                
-                //PHAKey.delete(PHAKey.length() - 1, PHAKey.length());
+                } 
 
             }
         }
