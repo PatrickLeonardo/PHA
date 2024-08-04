@@ -9,16 +9,9 @@ It is currently being developed by only one person, so it may take some time to 
 
 <hr>
 
-## Install
-
-#### Git CLI:
-```
-git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
-```
-
 ## Requeriments (recommendations)
 
-- JDK v.21 ( version tested )
+- JDK v.22 ( version tested )
 - A CLI ( for runner java code )
 
 <hr>
@@ -26,15 +19,15 @@ git clone https://github.com/PatrickLeonardo/PHA-256-Procedural-Hash-Algorithm
 ## Versions
 
 - Junit v.4.13.2
-- Maven v3.8.7
+- Apache Maven 3.8.7
 
 ### OS's
 
-- Kali GNU/Linux Rolling x86_64 
+- Kali GNU/Linux Rolling x86_64 ("linux", version: "6.8.11-amd64", arch: "amd64", family: "unix")
 
 ### Languages
 
-- Java 20.0.2 2023-07-18
+- Java 22.0.1 2024-04-16
 - ShellScript -> zsh 5.9(x86_64-debian-linux-gnu)
 
 <hr>
