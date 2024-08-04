@@ -11,7 +11,7 @@ public enum KeyEnum {
     
     private final byte[][][] value;
     
-    KeyEnum(byte[][][] value){
+    KeyEnum(final byte[][][] value){
         this.value = value;
     }
 

@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.security.InvalidKeyException;
 
 public class ValidKey {
@@ -13,8 +14,16 @@ public class ValidKey {
     File keyFile;
     String keyHash;
 
-    ValidKey(final File keyFIle) { this.keyFile = keyFIle; }
+    ValidKey(final File keyFIle) {
+        this.keyFile = keyFIle;
+    }
 
+    /**
+     * @return
+     * @throws FileNotFoundException
+     * @throws IOException
+     * @throws InvalidKeyException
+     */
     public Boolean validator() throws FileNotFoundException, IOException, InvalidKeyException {
         
         try {
@@ -32,8 +41,10 @@ public class ValidKey {
             throw exception;
         }
         
-        //System.out.println(this.keyHash);
-
+        this.keyHash = this.keyHash.replace("0x", "");
+        final BigInteger originalKey = new BigInteger(this.keyHash, 16);
+        System.out.println("\n" + originalKey);
+        
         if (this.keyFile == null) {
             throw new InvalidKeyException();
         }

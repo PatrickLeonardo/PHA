@@ -6,6 +6,5 @@ pha/algorithm/key/SubBytes.class
 pha/App.class
 pha/hash/HashEqualityProbability.class
 pha/algorithm/utilities/bitManager.class
-pha/cli/interfaces/Index.class
-pha/cli/repl/Repl.class
 pha/algorithm/key/KeyEnum.class
+pha/cli/repl/Repl.class

@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
-import pha.algorithm.utilities.bitManager;
 import pha.algorithm.utilities.savePHAKey;
 
 /**
@@ -18,6 +17,7 @@ import pha.algorithm.utilities.savePHAKey;
 public class PHAKeyCipher {
 
     public static StringBuilder PHAKey = new StringBuilder();
+    private static String[] randomValues;
 
     /**
      * <p>
@@ -49,16 +49,35 @@ public class PHAKeyCipher {
         return true;
     }
 
-    public static StringBuilder mountHexPHAKey(final String PHAKey){
-    
-        final String PHAKeyArray[] = PHAKey.split(" ");
+    private static StringBuilder createPublicKey() {
+         
+        final StringBuilder encodedPublicKey = new StringBuilder().append(mountHexPHAKey("public"));
+        
+        return encodedPublicKey;
+
+    }
+
+    private static StringBuilder createPrivateKey() {
+        
+        final StringBuilder encodedPrivateKey = new StringBuilder().append(mountHexPHAKey("private"));
+        
+        return encodedPrivateKey;
+
+    }
+
+    public static StringBuilder mountHexPHAKey(final String type){
+        
+
+        final Integer sizeOfKey = (type == "private") ? 64 : 64;
 
         final StringBuilder PHAKeyHash = new StringBuilder();
 
-        for(int byteIndex = 0; byteIndex < PHAKeyArray.length; byteIndex++) {
+        PHAKeyHash.append("0x");
+
+        for(int byteIndex = 0; byteIndex < sizeOfKey; byteIndex++) {
             
-            final String[] randomValue = generatePseudoNumberRamdom();            
-            final String hexValue = "0x" + String.valueOf(new BigInteger(randomValue[0]).toString(16));
+            randomValues = generatePseudoNumberRamdom();            
+            final String hexValue = String.valueOf(new BigInteger(randomValues[0]).toString(16));
 
             PHAKeyHash.append(hexValue);
         }
@@ -94,58 +113,6 @@ public class PHAKeyCipher {
         
         return resultBuilder.toString().split(" ");
         
-    }
-
-    private static StringBuilder createPublicKey() {
-         
-        final byte[][][] matrix = KeyEnum.MATRIX.getValue();
-
-        // Mouting indexes of the key
-        for (int line = 0; line < 4; line++) {
-            for (int column = 0; column < 4; column++) {
-
-                matrix[line][column][0] = 0x00;
-                if (Double.isInfinite(matrix[line][column][0])) {
-                    throw new java.lang.ArithmeticException();
-                }
-                if (!String.valueOf(matrix[line][column][0]).equals("null")) {
-                    PHAKey.append(bitManager.byteToBit(matrix[line][column][0])).append(" ");
-                } 
-
-            }
-        }
-        
-        final StringBuilder encodedPublicKey = new StringBuilder().append(mountHexPHAKey(PHAKey.toString()));
-        
-        return encodedPublicKey;
-
-    }
-
-    private static StringBuilder createPrivateKey() {
-
-        final byte[][][] matrix = KeyEnum.MATRIX.getValue();
-
-        // Mouting indexes of the key
-        for (int line = 0; line < 4; line++) {
-            for (int column = 0; column < 4; column++) {
-
-                matrix[line][column][0] = 0x00;
-                if (Double.isInfinite(matrix[line][column][0])) {
-                    throw new java.lang.ArithmeticException();
-                }
-                if (!String.valueOf(matrix[line][column][0]).equals("null")) {
-                    PHAKey.append(bitManager.byteToBit(matrix[line][column][0])).append(" ");
-                }
-                
-                //PHAKey.delete(PHAKey.length() - 1, PHAKey.length());
-
-            }
-        }
-        
-        final StringBuilder encodedPrivateKey = new StringBuilder().append(mountHexPHAKey(PHAKey.toString()));
-        
-        return encodedPrivateKey;
-
     }
 
 }

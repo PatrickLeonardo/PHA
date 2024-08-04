@@ -17,7 +17,9 @@ public class ProceduralHashAlgorithm {
             System.out.println("\n|  Key File not found...");
         }
          
-        return ""; 
+        final String encrypted_data = "";
+        
+        return encrypted_data;
 
     }
 
@@ -31,7 +33,9 @@ public class ProceduralHashAlgorithm {
             System.out.println("\n|  Key File not found...");
         }
 
-        return "";
+        final String decrypt_data = "";
+
+        return decrypt_data;
 
     }
 
